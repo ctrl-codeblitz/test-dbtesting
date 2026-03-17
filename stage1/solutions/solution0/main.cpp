@@ -1,14 +1,23 @@
 #include <iostream>
 
-int main() {
-    // Use long long to ensure we can handle 64-bit signed integers
-    long long a, b;
+using namespace std;
 
-    // cin automatically handles whitespace (spaces or newlines)
-    if (std::cin >> a >> b) {
-        long long sum = a + b;
-        std::cout << sum << std::endl;
+int main() {
+    // Optimize I/O operations
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    long long current_number;
+    long long total_sum = 0;
+
+    // This will keep reading integers one by one 
+    // regardless of whether they are on one line or many.
+    while (cin >> current_number) {
+        total_sum += current_number;
     }
+
+    // After all numbers are read, output the total.
+    cout << total_sum << endl;
 
     return 0;
 }
